@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ludo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #container {
+            width: 25%;
+            margin: 20px auto;
+            border: solid black 1px;
+        }
+        .ludo {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            height: 133px;
+        }
+        .frame {
+            border: solid black 1px;
+            width: 40%;
+        }
+        .seats {
+            border: solid black 1px;
+            margin: 23px auto;
+            width: 45%;
+            height: 80px;
+            border-radius: 10px;
+        }
+        .road {
+            border: solid black 1px;
+            height: 65px;
+        }
+        .roads {
+            height: 65px;
+        }
+        .green {
+            background: green;
+            border-bottom: none;
+            border-left: none;
+            border-top:none ;
+        }
+        .red {
+            background: red;
+            border-right: none;
+            border-top: none;
+            border-left: none;
+        }
+        .yellow {
+            background: rgb(233, 233, 10);
+            border-bottom: none;
+            border-left: none;
+            border-top: none;
+            border-right: none;
+        }
+        .blue {
+            background: rgb(72, 72, 228);
+            border-bottom: none;
+            border-left: none;
+        }
+        .white {
+            background: whitesmoke;
+        }
+        .lines {
+            border: solid black 1px;
+            height: 22px;
+            display: flex;
+        }
+        .squares {
+            width: 35px;
+            border: solid black 1px;
+        }
+        .border-tp {
+            border-top: none;
+            border-bottom: none;
+            border-left: none;
+        }
+        .square {
+            border: solid black 1px;
+            width: 29px;
+            height: 21px;
+            
+        }
+        .bg-dice {
+            background: url(./img/messi.jpeg);
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="ludo">
+            <div class="frame green">
+                <div class="seats white">
+                    <div style="display: flex; justify-content: space-evenly; margin: 12px auto;">
+                        <div class="four-seats green" style="border-radius: 100%; width: 20px;height: 20px;"></div>
+                        <div class="four-seats green" style="border-radius: 100%; width: 20px;height: 20px;"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-evenly; margin: 22px auto;">
+                        <div class="four-seats green" style="border-radius: 100%; width: 20px;height: 20px;"></div>
+                        <div class="four-seats green" style="border-radius: 100%; width: 20px;height: 20px;"></div>
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+            <div class="roads">
+                <div class="square" style="border-left: none; border-top: none; width: 28px;"></div>
+                <div class="square" style="border-left: none; border-top: none;width: 28px;"></div>
+                <div class="square" style="border-left: none; border-top: none;width: 28px;">
+                    <span>
+                        <img src="./img/star2.png" alt="safe" width="25" height="25"/>
+                    </span>
+                </div>
+                <div class="square" style="border-left: none; border-top: none;width: 28px;"></div>
+                <div class="square" style="border-left: none; border-top: none;width: 28px;"></div>
+                <div class="square" style="border-left: none; border-top: none;width: 28px; border-bottom: none;"></div>
+            </div>
+            <div class="roads">
+                <div class="square" style="border-left: none; border-top: none;">
+                    <span style="padding-left: 5px;">
+                        <img src="./img/red-arrow.png" alt="arror" height="9" width="10"  style="padding-left: 4px;"/>
+                       </span>
+                </div>
+                <div class="square red" style="border-left: none; border-top: none; width: 29px;"></div>
+                <div class="square red" style="border-left: none; border-top: none;"></div>
+                <div class="square red" style="border-left: none; border-top: none;"></div>
+                <div class="square red" style="border-left: none; border-top: none;"></div>
+                <div class="square red" style="border-left: none; border-top: none; border-bottom: none;"></div>
+            </div>
+            <div class="roads">
+                <div class="square"  style="border-left: none; border-top: none;"></div>
+                <div class="square red" style="border-left: none; border-top: none; border-right: none; width: 30px;"></div>
+                <div class="square" style="border-left: none; border-top: none;"></div>
+                <div class="square" style="border-left: none; border-top: none;"></div>
+                <div class="square" style="border-left: none; border-top: none;"></div>
+                <div class="square" style="border-left: none; border-top: none; border-bottom: none;"></div>
+            </div>
+            <div class="frame red">
+                <div class="seats white">
+                    <div style="display: flex; justify-content: space-evenly; margin: 12px auto;">
+                        <div class="four-seats red" style="border-radius: 100%; width: 20px;height: 20px;"></div>
+                        <div class="four-seats red" style="border-radius: 100%; width: 20px;height: 20px;"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-evenly; margin: 22px auto;">
+                        <div class="four-seats red" style="border-radius: 100%; width: 20px;height: 20px;"></div>
+                        <div class="four-seats red" style="border-radius: 100%; width: 20px;height: 20px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: row;">
+            <div class="road" style="width: 38%; border-top: none; border-left: none; border-bottom: none;">
+                <div class="lines" style="border-left: none; border-top: none; border-right: none; border-bottom: solid black 1px;">
+                    <div class="squares border-tp"></div>
+                    <div class="squares border-tp green" style="border-top-color: white;"></div>
+                    <div class="squares border-tp"></div>
+                    <div class="squares border-tp"></div>
+                    <div class="squares border-tp"></div>
+                    <div class="squares border-tp" style="border-right: none;"></div>
+                </div>
+                <div class="lines" style="border-left: none; border-top: none; border-right: none;">
+                    <div class="squares border-tp" style="border-left: none;">
+                        <span style="padding-left: 5px;">
+                         <img src="./img/green-arrow.png" alt="arror" height="11" width="18">
+                        </span>
+                   </div>
+                    <div class="squares border-tp green"></div>
+                    <div class="squares border-tp green"></div>
+                    <div class="squares border-tp green"></div>
+                    <div class="squares border-tp green" ></div>
+                    <div class="squares border-tp green" style="border-right: none;"></div>
+                </div>
+                <div class="lines" style="border-left: none; border-top: none; border-right: none;">
+                    <div class="squares border-tp"></div>
+                    <div class="squares border-tp"></div>
+                    <div class="squares border-tp">
+                        <span>
+                            <img src="./img/star2.png" alt="safe" width="25" height="25"/>
+                        </span>
+                    </div>
+                    <div class="squares border-tp"></div>
+                    <div class="squares border-tp"></div>
+                    <div class="squares border-tp" style="border-right: none;"></div>
+                </div>
+            </div>
+            <div class="road bg-dice" style="width: 30%; border-left: none; height: 68px;">
+                <span style="display: flex; justify-content: center; align-items: center;">
+                    <img src="./img/red-dice.png" alt="center" height="80px" width="80px"/>
+                </span>
+            </div>
+            <div class="road" style="width: 37%; border-top: none; border-left: none; height: 67px;">
+                <div class="lines" style="border-left: none; border-top: none; border-right: none;">
+                    <div class="squares border-tp"></div>
+                    <div class="squares border-tp" style="border-top-color: white;"></div>
+                    <div class="squares border-tp"></div>
+                    <div class="squares border-tp">
+                        <span>
+                            <img src="./img/star2.png" alt="safe" width="25" height="25"/>
+                        </span>
+                    </div>
+                    <div class="squares border-tp"></div>
+                    <div class="squares border-tp" style="border-right: none;"></div>
+                </div>
+                <div class="lines" style="border-left: none; border-top: none; border-right: none;">
+                    <div class="squares border-tp yellow" style="border-left: none; "></div>
+                    <div class="squares border-tp yellow"></div>
+                    <div class="squares border-tp yellow"></div>
+                    <div class="squares border-tp yellow"></div>
+                    <div class="squares border-tp yellow"></div>
+                    <div class="squares border-tp" style="border-right: none;">
+                        <span style="padding-right: 5px;">
+                            <img src="./img/yellow-arrow.png" alt="arror" height="11" width="19">
+                           </span>
+                    </div>
+                </div>
+                <div class="lines" style="border-left: none; border-top: none; border-right: none; border-bottom: none;">
+                    <div class="squares border-tp"></div>
+                    <div class="squares border-tp"></div>
+                    <div class="squares border-tp"></div>
+                    <div class="squares border-tp"></div>
+                    <div class="squares border-tp yellow"></div>
+                    <div class="squares border-tp" style="border-right: none;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="ludo">
+            <div class="frame blue">
+                <div class="seats white">
+                    <div style="display: flex; justify-content: space-evenly; margin: 12px auto;">
+                        <div class="four-seats blue" style="border-radius: 100%; width: 20px;height: 20px;"></div>
+                        <div class="four-seats blue" style="border-radius: 100%; width: 20px;height: 20px;"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-evenly; margin: 22px auto;">
+                        <div class="four-seats blue" style="border-radius: 100%; width: 20px;height: 20px;"></div>
+                        <div class="four-seats blue" style="border-radius: 100%; width: 20px;height: 20px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="roads">
+                <div class="square" style="border-left: none; border-top: none;"></div>
+                <div class="square" style="border-left: none; border-top: none;"></div>
+                <div class="square" style="border-left: none; border-top: none;"></div>
+                <div class="square" style="border-left: none; border-top: none;"></div>
+                <div class="square blue" style="border-left: none; border-top: none;"></div>
+                <div class="square" style="border-left: none; border-top: none; border-bottom: none;"></div>
+            </div>
+            <div class="roads">
+                <div class="square blue" style="border-left: none; border-top: none;"></div>
+                <div class="square blue" style="border-left: none; border-top: none;"></div>
+                <div class="square blue" style="border-left: none; border-top: none;"></div>
+                <div class="square blue" style="border-left: none; border-top: none;"></div>
+                <div class="square blue" style="border-left: none; border-top: none;"></div>
+                <div class="square" style="border-left: none; border-top: none; border-bottom: none;">
+                    <span style="padding-left: 5px;">
+                        <img src="./img/blue-arrow.png" alt="arror" height="11" width="18">
+                       </span>
+                </div>
+            </div>
+            <div class="roads">
+                <div class="square"  style="border-left: none; border-top: none;"></div>
+                <div class="square" style="border-left: none; border-top: none;"></div>
+                <div class="square" style="border-left: none; border-top: none;"></div>
+                <div class="square" style="border-left: none; border-top: none;">
+                    <span>
+                        <img src="./img/star2.png" alt="safe" width="25" height="25"/>
+                    </span>
+                </div>
+                <div class="square" style="border-left: none; border-top: none;"></div>
+                <div class="square" style="border-left: none; border-top: none; border-bottom: none;"></div>
+            </div>
+            <div class="frame yellow">
+                <div class="seats white"><div style="display: flex; justify-content: space-evenly; margin: 12px auto;">
+                    <div class="four-seats yellow" style="border-radius: 100%; width: 20px;height: 20px;"></div>
+                    <div class="four-seats yellow" style="border-radius: 100%; width: 20px;height: 20px;"></div>
+                </div>
+                <div style="display: flex; justify-content: space-evenly; margin: 22px auto;">
+                    <div class="four-seats yellow" style="border-radius: 100%; width: 20px;height: 20px;"></div>
+                    <div class="four-seats yellow" style="border-radius: 100%; width: 20px;height: 20px;"></div>
+                </div></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
